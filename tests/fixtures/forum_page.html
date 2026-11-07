@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Помогите с unittest — Форум</title>
+</head>
+<body>
+<main class="topic">
+    <h1>Помогите разобраться с unittest</h1>
+
+    <article class="post" data-post-id="101">
+        <div class="post-author">
+            <a class="username" href="/users/ivan_petrov">ivan_petrov</a>
+            <span class="post-date">01.11.2026</span>
+        </div>
+        <div class="post-message">
+            <p>Привет! Подскажите, как замокать <code>requests.get</code> в тестах, чтобы они не ходили в интернет?</p>
+        </div>
+        <a class="permalink" href="/topic/42?p=101#post-101">#101</a>
+    </article>
+
+    <article class="post" data-post-id="102">
+        <div class="post-author">
+            <a class="username" href="/users/python_guru">python_guru</a>
+            <span class="post-date">01.11.2026</span>
+        </div>
+        <div class="post-message">
+            <p>Используй <b>unittest.mock.patch</b>, он подменяет функцию на время теста:</p>
+            <pre><code>with patch("src.parser.requests.get") as mock_get:
+    mock_get.return_value.text = html</code></pre>
+        </div>
+        <a class="permalink" href="/topic/42?p=102#post-102">#102</a>
+    </article>
+
+    <article class="post" data-post-id="103">
+        <div class="post-author">
+            <a class="username" href="/users/anna_s">anna_s</a>
+            <span class="post-date">02.11.2026</span>
+        </div>
+        <div class="post-message">
+            <p>А ещё обратите внимание на <i>lxml</i> — он быстрее стандартного html.parser.</p>
+        </div>
+        <a class="permalink" href="/topic/42?p=103#post-103">#103</a>
+    </article>
+
+    <nav class="pagination">
+        <a class="next" rel="next" href="/topic/42?page=2">Следующая страница</a>
+    </nav>
+</main>
+</body>
+</html>
